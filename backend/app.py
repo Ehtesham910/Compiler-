@@ -11,7 +11,7 @@ sys.path.insert(0, ROOT_DIR)
 
 from compiler import compile_and_run  # noqa: E402
 
-from .database import init_db, insert_run
+from database import init_db, insert_run
 
 
 FRONTEND_DIR = os.path.join(ROOT_DIR, "frontend")
