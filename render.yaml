@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: Compiler
+    env: python
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python backend/app.py
+    root: .
