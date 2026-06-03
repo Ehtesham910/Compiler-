@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MiniLang Compiler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>MiniLang Compiler</h1>
+
+      <div class="row">
+        <div class="panel">
+          <h2>Source</h2>
+          <textarea id="sourceCode" spellcheck="false">
+let x = 0;
+while (x < 5) {
+  x = x + 1;
+}
+print x;
+          </textarea>
+          <button id="runBtn">Compile & Run</button>
+        </div>
+
+        <div class="panel">
+          <h2>Output</h2>
+          <pre id="outputBox" class="output"></pre>
+          <div id="errorBox" class="error"></div>
+        </div>
+      </div>
+
+      <div class="hint">
+        Statements end with <code>;</code>. Variables can be declared with <code>let x;</code> (defaults to 0) or <code>let x = 5;</code>. Example: <code>let a = 3;</code>
+      </div>
+    </div>
+
+    <!-- Mark 1: Syntax Guide Toggle Button -->
+    <button id="syntax-toggle" class="syntax-toggle-btn" title="Show Syntax Guide">?</button>
+
+    <!-- Mark 1: Syntax Guide -->
+    <div id="syntax-guide" class="syntax-guide hidden">
+      <button id="syntax-close" class="syntax-close-btn">&times;</button>
+      <h3>MiniLang Syntax Guide</h3>
+      <div class="syntax-content">
+        <h4>Variables</h4>
+        <code>let x = 10;</code><br>
+        <code>let y;  // defaults to 0</code><br>
+        <code>x = x + 1;</code>
+
+        <h4>Print</h4>
+        <code>print x;</code>
+
+        <h4>Control Flow</h4>
+        <code>if (x > 5) { ... } else { ... }</code><br>
+        <code>while (x < 10) { ... }</code><br>
+        <code>for (let i = 0; i < 5; i = i + 1) { ... }</code><br>
+        <code>switch (x) { case 1: ... case 2: ... default: ... }</code><br>
+        <code>break;</code> <code>continue;</code>
+
+        <h4>Expressions</h4>
+        <code>+ - * / % == != < <= > >= && || !</code><br>
+        <code>condition ? value1 : value2</code><br>
+        <code>true false numbers (3.14) strings ("hello")</code><br>
+        <code>(expr)</code><br>
+        <code>read()  // reads a value from user input</code>
+      </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
+

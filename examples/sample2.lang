@@ -1,0 +1,12 @@
+let a = 10;
+let b = 3;
+let c = 0;
+
+if (a > b) {
+  c = a + b * 2;
+} else {
+  c = a - b;
+}
+
+print c;
+
